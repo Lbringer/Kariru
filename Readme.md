@@ -6,7 +6,7 @@ A simple rental website for books.
 
 - [ ] User/Admin should be able to login/register
 - [ ] Admin should not be able to register wuthout the approval of another admin
-      ** User **
+      **User**
 - [ ] User should see all books irrespective of available or not
 - [ ] User should be able to directly search the book name to find it
 - [ ] User should be able to apply filter of genre,author
@@ -23,7 +23,7 @@ A simple rental website for books.
 - [ ] User should be able to return books view how much it will be with or without penalities
 - [ ] User should be able to see all notifications and filter depending on type
 - [ ] User should be able to edit his or her profile
-      ** Admin **
+      **Admin**
 - [ ] Admin should be able to see over all metrics (how many books are rented , overdue books , pending reservation requests)
 - [ ] Admin should be able to add a new book which is available for rent
 - [ ] Admin should be able to see all books and edit details about it
@@ -40,7 +40,7 @@ A simple rental website for books.
 ### Screens
 
 - [ ] Home screen
-      ** User **
+      **User**
 - [ ] Login/Register Screen
 - [ ] Book List Screen (商品一覧)
 - [ ] Book Details Screen
@@ -49,7 +49,7 @@ A simple rental website for books.
 - [ ] My Rentals Screen
 - [ ] Notifications Screen
 - [ ] Profile Management Screen
-      ** Admin **
+      **Admin**
 - [ ] Login Screen
 - [ ] Dashboard
 - [ ] Book Registration Screen (商品登録)
