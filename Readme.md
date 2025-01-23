@@ -43,8 +43,6 @@ A simple rental website for books.
 
 ### Screens
 
-- [ ] Home screen
-
 **User**
 
 - [ ] Login/Register Screen
