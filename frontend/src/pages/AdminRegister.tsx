@@ -1,16 +1,17 @@
+import { Loader } from "@/components/ui/Loader";
 import { FormInput } from "../components/FormInput";
 import { Logo } from "../components/Logo";
-import { Loader } from "@/components/ui/Loader";
 import { useRegister } from "@/hooks";
 
-export const Register = () => {
-  const { data, setData, handleClick, loading, navigate } = useRegister("user");
+export const AdminRegister = () => {
+  const { data, setData, handleClick, loading, navigate } =
+    useRegister("admin");
   if (loading) {
     return <Loader />;
   }
   return (
     <div className="w-full h-full flex flex-col justify-center items-center">
-      <div className="text-3xl font-medium">Welcome</div>
+      <div className="text-3xl font-medium">Glad to have you onboard</div>
       <Logo />
       <FormInput
         id="name"
@@ -52,12 +53,12 @@ export const Register = () => {
         </span>
       </div>
       <div className="text-xs fixed right-20 top-20">
-        Are you an admin?{" "}
+        Are you a user?{" "}
         <span
           className="underline cursor-pointer font-medium"
-          onClick={() => navigate("/admin_register")}
+          onClick={() => navigate("/register")}
         >
-          Register as Admin
+          Register as User
         </span>
       </div>
     </div>

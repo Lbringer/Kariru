@@ -14,15 +14,18 @@ import { BookRegister } from "./pages/BookRegister";
 import { Inventory } from "./pages/Inventory";
 import { RentalManagement } from "./pages/RentalManagement";
 import { UserManagement } from "./pages/UserManagement";
+import { AdminRegister } from "./pages/AdminRegister";
+import { Toaster } from "./components/ui/toaster";
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-slate-50 text-slate-950 font-poppins">
+    <div className="w-screen h-screen bg-slate-50 text-slate-950 font-poppins overflow-y-auto">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Navigate to={"/login"} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/admin_register" element={<AdminRegister />} />
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/myProfile" element={<MyProfile />} />
 
@@ -44,6 +47,7 @@ function App() {
           <Route path="/userManagement" element={<UserManagement />} />
         </Routes>
       </BrowserRouter>
+      <Toaster />
     </div>
   );
 }

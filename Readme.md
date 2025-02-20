@@ -4,7 +4,7 @@ A simple rental website for books.
 
 ### User Stories
 
-- [ ] User/Admin should be able to login/register
+- [x] User/Admin should be able to login/register
 - [ ] Admin should not be able to register wuthout the approval of another admin
 
 **User**
@@ -12,7 +12,7 @@ A simple rental website for books.
 - [ ] User should see all books irrespective of available or not
 - [ ] User should be able to directly search the book name to find it
 - [ ] User should be able to apply filter of genre,author
-- [ ] User should be able to click on any book and see the details of the book
+- [ ] User should be able to click on any book and see the details of the book (deemed not needed as there is no description so user can see all details in the home page only)
 - [ ] User should be able to rent the book if in stock
 - [ ] User should be able to add the book into the users waitlist if not in stock
 - [ ] User should be able to remove books from waitlist
@@ -45,9 +45,9 @@ A simple rental website for books.
 
 **User**
 
-- [ ] Login/Register Screen
+- [x] Login/Register Screen
 - [ ] Book List Screen (商品一覧)
-- [ ] Book Details Screen
+- [ ] Book Details Screen (Deemed not necessary)
 - [ ] Waitlist Screen (待ち一覧)
 - [ ] Reservation Screen (予約)
 - [ ] My Rentals Screen

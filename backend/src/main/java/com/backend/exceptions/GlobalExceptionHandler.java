@@ -1,5 +1,7 @@
 package com.backend.exceptions;
 
+import java.nio.file.AccessDeniedException;
+import java.security.SignatureException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,9 +11,13 @@ import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AccountStatusException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import io.jsonwebtoken.ExpiredJwtException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
@@ -39,6 +45,31 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<String> handleDatabaseException(DataIntegrityViolationException ex) {
         return ResponseEntity.status(HttpStatus.CONFLICT).body("Database constraint violation");
+    }
+
+    @ExceptionHandler(BadCredentialsException.class)
+    public ResponseEntity<String> handleBadCredentialsException(BadCredentialsException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Bad credentials");
+    }
+
+    @ExceptionHandler(AccountStatusException.class)
+    public ResponseEntity<String> handleAccountStatusException(AccountStatusException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("The account is locked");
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+    public ResponseEntity<String> handleAccessDeniedException(AccessDeniedException ex) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body("Not authorized to access a resource");
+    }
+
+    @ExceptionHandler(SignatureException.class)
+    public ResponseEntity<String> handleSignatureException(SignatureException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid JWT");
+    }
+
+    @ExceptionHandler(ExpiredJwtException.class)
+    public ResponseEntity<String> handleExpiredJwtException(ExpiredJwtException ex) {
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("JWT has expired");
     }
 
     @ExceptionHandler(Exception.class)
